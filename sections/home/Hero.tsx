@@ -139,23 +139,7 @@ export default function Hero() {
                   </Link>
                 </div>
 
-                {/* Micro-datos */}
-                <div className="grid max-w-[44rem] grid-cols-1 gap-3 pt-4 sm:grid-cols-3">
-                  {[{ k: 'Ciudad', v: 'Popayán, Cauca' }].map((it) => (
-                    <div
-                      key={it.k}
-                      className="rounded-2xl bg-background/45 px-4 py-3 ring-1 ring-inset ring-border/60 backdrop-blur"
-                    >
-                      <p className="text-xs font-semibold text-muted-foreground">{it.k}</p>
-                      <p
-                        className="mt-1 text-sm font-medium"
-                        style={{ color: 'hsl(var(--hero-ink))' } as React.CSSProperties}
-                      >
-                        {it.v}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                
               </div>
 
               {/* Spacer columna derecha */}
