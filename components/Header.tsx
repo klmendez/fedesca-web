@@ -6,6 +6,8 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { Menu, Moon, Sun, X } from 'lucide-react'
+import { basePath } from '../lib/basePath'
+
 
 const nav = [
   { href: '/', label: 'Inicio' },
@@ -121,7 +123,7 @@ export default function Header() {
           <Link href="/" className="flex items-center px-2 py-1.5">
             <div className="relative h-10 sm:h-12 w-[140px] sm:w-[170px]">
               <Image
-                src="/2.webp"
+ src={`${basePath}/2.webp`}
                 alt="Fundación Educativa FEDESCA"
                 fill
                 priority
