@@ -1,11 +1,9 @@
 const repo = 'fedesca-web'
+const isProd = process.env.NODE_ENV === 'production'
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   output: 'export',
-  basePath: `/${repo}`,
-  assetPrefix: `/${repo}/`,
+  basePath: isProd ? `/${repo}` : '',
+  assetPrefix: isProd ? `/${repo}/` : '',
   images: { unoptimized: true },
 }
-
-module.exports = nextConfig
