@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FadeIn } from '@/components/Motion'
 import PageHero from '@/components/PageHero'
+import { basePath } from '@/lib/basePath'
 
 export default function Hero() {
   return (
@@ -19,7 +20,7 @@ export default function Hero() {
           {/* IMAGEN DESKTOP (derecha) */}
           <div className="pointer-events-none absolute right-0 bottom-0 z-0 hidden lg:block h-[82%] w-[40%]">
             <Image
-              src="/1.webp"
+              src={`${basePath}/1.webp`}
               alt="Estudiantes FEDESCA"
               fill
               priority
@@ -36,7 +37,7 @@ export default function Hero() {
           {/* IMAGEN MOBILE (abajo) */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 lg:hidden h-[330px] sm:h-[400px]">
             <Image
-              src="/1.webp"
+              src={`${basePath}/1.webp`}
               alt="Estudiantes FEDESCA"
               fill
               priority
@@ -140,15 +141,16 @@ export default function Hero() {
 
                 {/* Micro-datos */}
                 <div className="grid max-w-[44rem] grid-cols-1 gap-3 pt-4 sm:grid-cols-3">
-                  {[
-                    { k: 'Ciudad', v: 'Popayán, Cauca' },
-                  ].map((it) => (
+                  {[{ k: 'Ciudad', v: 'Popayán, Cauca' }].map((it) => (
                     <div
                       key={it.k}
                       className="rounded-2xl bg-background/45 px-4 py-3 ring-1 ring-inset ring-border/60 backdrop-blur"
                     >
                       <p className="text-xs font-semibold text-muted-foreground">{it.k}</p>
-                      <p className="mt-1 text-sm font-medium" style={{ color: 'hsl(var(--hero-ink))' } as React.CSSProperties}>
+                      <p
+                        className="mt-1 text-sm font-medium"
+                        style={{ color: 'hsl(var(--hero-ink))' } as React.CSSProperties}
+                      >
                         {it.v}
                       </p>
                     </div>
@@ -156,7 +158,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Spacer columna derecha (para que el texto no choque con la imagen en desktop) */}
+              {/* Spacer columna derecha */}
               <div className="hidden lg:block w-[40%]" />
             </div>
           </div>

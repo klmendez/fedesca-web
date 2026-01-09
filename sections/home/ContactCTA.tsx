@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { FadeIn } from '@/components/Motion'
+import { basePath } from '@/lib/basePath'
 
 const SUGGESTIONS: Record<string, string> = {
   programas:
@@ -36,12 +37,13 @@ export default function ContactCTA() {
               {/* Logos */}
               <div className="flex flex-wrap items-center gap-6">
                 <Image
-                  src="/2.webp"
+                  src={`${basePath}/2.webp`}
                   alt="Fundación Educativa FEDESCA"
                   width={500}
                   height={80}
                   priority
                 />
+
 
               </div>
 

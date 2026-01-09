@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FadeIn } from '@/components/Motion'
 import Card from '@/components/Card'
+import { basePath } from '@/lib/basePath'
 
 type Program = {
   id: string
@@ -90,7 +91,14 @@ function Modal({
       <div className="absolute left-1/2 top-1/2 w-[92vw] max-w-3xl -translate-x-1/2 -translate-y-1/2">
         <div className="overflow-hidden rounded-3xl border border-border bg-background shadow-2xl">
           <div className="relative h-48 sm:h-60">
-            <Image src={program.image} alt={program.title} fill className="object-cover" />
+            {/* ✅ basePath aplicado */}
+            <Image
+              src={`${basePath}${program.image}`}
+              alt={program.title}
+              fill
+              className="object-cover"
+              priority
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" />
 
             <div className="absolute bottom-4 left-4 right-4">
@@ -331,11 +339,10 @@ export default function OfertaTiles() {
                 onClick={() => onOpen(p)}
                 className="group relative overflow-hidden rounded-3xl border border-border/60 bg-card text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40"
               >
-                {/* Más compacto */}
                 <div className="relative h-40 sm:h-44 lg:h-48">
-                  {/* Imagen: blur fuerte + control */}
+                  {/* ✅ basePath aplicado */}
                   <Image
-                    src={p.image}
+                    src={`${basePath}${p.image}`}
                     alt={p.title}
                     fill
                     className="
@@ -348,13 +355,9 @@ export default function OfertaTiles() {
                     "
                   />
 
-                  {/* Overlay para calidad + look */}
                   <div className="absolute inset-0 bg-black/35 dark:bg-black/55" />
-
-                  {/* Scrim inferior para legibilidad */}
                   <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
 
-                  {/* Contenido encima (blanco, legible) */}
                   <div className="absolute inset-x-0 bottom-0 p-5">
                     <div className="flex flex-wrap items-center gap-2">
                       {p.badge && (
@@ -372,7 +375,6 @@ export default function OfertaTiles() {
                     </div>
 
                     <div className="mt-3">
-                      {/* acento institucional */}
                       <FedAccentBar />
                     </div>
                   </div>
