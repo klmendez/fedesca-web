@@ -71,31 +71,50 @@ export default function Hero() {
                   className="text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-6xl"
                   style={{ color: 'hsl(var(--hero-ink))' } as React.CSSProperties}
                 >
-                  <span className="block">
-                    Fundación Educativa <span className="whitespace-nowrap">para el</span>
+                  <span className="block sm:hidden">
+                    Educación que impulsa el
+                    {' '}
+                    <span className="text-[hsl(var(--fed-purple))]">desarrollo social</span>
+                    {' '}
+                    en Popayán.
                   </span>
 
-                  <span className="block">
-                    <span className="text-[hsl(var(--fed-purple))]">Desarrollo Social</span>,{' '}
-                    <span className="text-[hsl(var(--fed-purple-text))]">Cultural</span> y{' '}
-                    <span className="whitespace-nowrap">Ambiental</span>
-                  </span>
+                  <span className="hidden sm:block">
+                    <span className="block">
+                      Fundación Educativa <span className="whitespace-nowrap">para el</span>
+                    </span>
 
-                  <span
-                    className="mt-4 block text-sm font-medium tracking-[0.22em] uppercase"
-                    style={{ color: 'hsl(var(--hero-ink-soft))' } as React.CSSProperties}
-                  >
-                    FEDESCA
+                    <span className="block">
+                      <span className="text-[hsl(var(--fed-purple))]">Desarrollo Social</span>,{' '}
+                      <span className="text-[hsl(var(--fed-purple-text))]">Cultural</span> y{' '}
+                      <span className="whitespace-nowrap">Ambiental</span>
+                    </span>
+
+                    <span
+                      className="mt-4 block text-sm font-medium tracking-[0.22em] uppercase"
+                      style={{ color: 'hsl(var(--hero-ink-soft))' } as React.CSSProperties}
+                    >
+                      FEDESCA
+                    </span>
                   </span>
                 </h1>
 
-                <p
-                  className="max-w-[44rem] text-pretty text-base leading-relaxed sm:text-lg"
-                  style={{ color: 'hsl(var(--hero-ink-soft))' } as React.CSSProperties}
-                >
-                  Educación que impulsa el <strong className="font-semibold">desarrollo social y comunitario</strong>,
-                  con programas de educación formal y para jóvenes y adultos que transforman vidas en Popayán y el Cauca.
-                </p>
+                <div className="space-y-4">
+                  <p
+                    className="max-w-[44rem] text-pretty text-base leading-relaxed sm:hidden"
+                    style={{ color: 'hsl(var(--hero-ink-soft))' } as React.CSSProperties}
+                  >
+                    Programas formales y por ciclos para transformar vidas en Popayán y el Cauca.
+                  </p>
+
+                  <p
+                    className="hidden max-w-[44rem] text-pretty text-base leading-relaxed sm:block sm:text-lg"
+                    style={{ color: 'hsl(var(--hero-ink-soft))' } as React.CSSProperties}
+                  >
+                    Educación que impulsa el <strong className="font-semibold">desarrollo social y comunitario</strong>,
+                    con programas de educación formal y para jóvenes y adultos que transforman vidas en Popayán y el Cauca.
+                  </p>
+                </div>
 
                 <div className="flex flex-wrap items-center gap-3 pt-1">
                   <Link

@@ -226,4 +226,8 @@
     border-color: hsla(var(--primary-foreground) / 0.35);
     color: hsl(var(--primary-foreground));
   }
+  html {
+  scroll-behavior: smooth;
+}
+
 }
