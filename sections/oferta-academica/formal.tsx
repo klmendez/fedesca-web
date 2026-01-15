@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Section from '@/components/Section'
 import type { Program } from '@/data/oferta'
+import { basePath } from '@/lib/basePath'
 
 type FormalProps = {
   programs: Program[]
@@ -27,23 +28,23 @@ export default function Formal({ programs, note }: FormalProps) {
       </div>
 
       <div className="py-14">
-        {/* TÍTULO PRINCIPAL */}
-        <div className="mb-14 text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        {/* TÍTULO PRINCIPAL (más pequeño) */}
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Educación formal
           </h2>
-          <div className="mx-auto mt-4 h-[3px] w-24 bg-[linear-gradient(90deg,transparent,hsla(var(--primary)/0.95),transparent)]" />
+          <div className="mx-auto mt-3 h-[3px] w-20 bg-[linear-gradient(90deg,transparent,hsla(var(--primary)/0.95),transparent)]" />
         </div>
 
-        {/* INTRO */}
-        <div className="mx-auto max-w-3xl space-y-4 text-left">
-          <h3 className="text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
+        {/* INTRO (más pequeño) */}
+        <div className="mx-auto max-w-3xl space-y-3 text-left">
+          <h3 className="text-xl font-semibold leading-tight text-foreground sm:text-2xl">
             Bachillerato integral con proyección a la vida universitaria
           </h3>
 
-          <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Formación sólida y flexible para fortalecer competencias académicas,
-            socioemocionales y tecnológicas, con acompañamiento permanente.
+          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Formación sólida y flexible para fortalecer competencias académicas, socioemocionales y tecnológicas, con
+            acompañamiento permanente.
           </p>
 
           {note ? (
@@ -54,39 +55,38 @@ export default function Formal({ programs, note }: FormalProps) {
         </div>
 
         {/* PROGRAMAS */}
-        <div className="mx-auto mt-14 max-w-5xl">
+        <div className="mx-auto mt-12 max-w-5xl">
           <p className="mb-6 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">
             Programas disponibles
           </p>
 
           {programs.map((program, index) => (
-            <div
-              key={program.id}
-              className="grid items-start gap-10 py-10 lg:grid-cols-[1.1fr_0.9fr]"
-            >
-              {/* TEXTO DEL PROGRAMA */}
+            <div key={program.id} className="grid items-start gap-10 py-10 lg:grid-cols-[1.1fr_0.9fr]">
+              {/* TEXTO DEL PROGRAMA (más grande) */}
               <div className="space-y-3">
-                <h4 className="text-xl font-semibold text-foreground">
+                <h4 className="text-2xl font-semibold text-foreground sm:text-3xl">
                   {program.name}
                 </h4>
-                <p className="text-xs font-medium uppercase tracking-[0.22em] text-[hsla(var(--primary)/0.9)]">
+
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[hsla(var(--primary)/0.92)]">
                   {program.area}
                 </p>
 
-                <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
+                <p className="max-w-prose text-base leading-relaxed text-muted-foreground sm:text-lg">
                   {program.summary}
                 </p>
               </div>
 
               {/* IMAGEN SOLO PARA EL PRIMER PROGRAMA */}
-              {index === 0 && (
+              {index === 0 ? (
                 <div className="relative">
                   {/* halo */}
                   <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[32px] bg-[hsla(var(--primary)/0.18)] blur-3xl" />
 
+                  {/* imagen horizontal con sombra (no card) */}
                   <div className="relative aspect-[16/9] w-full shadow-[0_36px_80px_-44px_hsla(var(--primary)/0.75)]">
                     <Image
-                      src="/oferta/bachiller.webp"
+                      src={`${basePath}/oferta/bachiller.webp`}
                       alt="Bachillerato Académico"
                       fill
                       className="object-cover"
@@ -95,17 +95,20 @@ export default function Formal({ programs, note }: FormalProps) {
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_60%,hsla(var(--background)/0.35))]" />
                   </div>
                 </div>
+              ) : (
+                <div className="hidden lg:block" aria-hidden="true" />
               )}
             </div>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-14 flex justify-center gap-3">
-          <Link href="/landing/formal" className="btn btn-secondary">
+        {/* CTA (botones mejorados sin tocar tu sistema .btn) */}
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
+          <Link href="/landing/formal" className="btn btn-secondary !px-7 !py-3 !text-base">
             Ver más información
           </Link>
-          <Link href="/contacto" className="btn btn-ghost">
+
+          <Link href="/contacto" className="btn btn-ghost !px-7 !py-3 !text-base">
             Hablar con un asesor →
           </Link>
         </div>
