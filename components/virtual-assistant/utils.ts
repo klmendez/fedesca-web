@@ -56,7 +56,7 @@ export function programSearch(userText: string) {
 
 export function bubbleClasses(author: 'bot' | 'user') {
   return author === 'user'
-    ? 'ml-auto bg-[linear-gradient(135deg,hsla(var(--primary)/1),hsla(var(--accent)/1))] text-[hsl(var(--primary-foreground))]'
+    ? 'ml-auto bg-[hsl(var(--fed-purple))] text-white'
     : 'mr-auto bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))]'
 }
 

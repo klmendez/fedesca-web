@@ -11,12 +11,13 @@ import { basePath } from '../lib/basePath'
 
 const nav = [
   { href: '/', label: 'Inicio' },
-  { href: '/quienes-somos', label: 'Quiénes Somos' },
-  { href: '/mision-vision', label: 'Misión y Visión' },
   { href: '/oferta-academica', label: 'Oferta Académica' },
   { href: '/colegio-san-carlos', label: 'Colegio San Carlos' },
-  { href: '/admisiones', label: 'Admisiones' },
   { href: '/contacto', label: 'Contacto' },
+  { href: '/admisiones', label: 'Admisiones' },
+  { href: '/quienes-somos', label: 'Sobre Nosotros' },
+
+ 
 ]
 
 function cx(...classes: Array<string | false | null | undefined>) {
@@ -90,7 +91,7 @@ export default function Header() {
       active &&
         (transparentMode
           ? 'after:bg-white/85 dark:after:bg-white/75'
-          : 'after:bg-[linear-gradient(to_right,hsla(var(--primary)/1),hsla(var(--accent)/1))]'),
+          : 'after:bg-[hsl(var(--fed-purple))]'),
     )
 
   const mobileLinkClasses = (active: boolean, isAdmissions: boolean) =>
@@ -102,7 +103,7 @@ export default function Header() {
           ? 'text-foreground'
           : 'text-muted-foreground hover:text-foreground hover:bg-foreground/4',
       active && !isAdmissions
-        ? 'after:absolute after:left-6 after:right-6 after:bottom-2 after:h-[3px] after:rounded-full after:bg-[linear-gradient(to_right,hsla(var(--primary)/1),hsla(var(--accent)/1))]'
+        ? 'after:absolute after:left-6 after:right-6 after:bottom-2 after:h-[3px] after:rounded-full after:bg-[hsl(var(--fed-purple))]'
         : '',
     )
 

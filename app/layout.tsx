@@ -5,7 +5,7 @@ import ThemeProvider from '@/components/ThemeProvider'
 import FloatingButtons from '@/components/FloatingButtons'
 
 export const metadata = {
-  title: 'FEDESCA – Colegio San Carlos',
+  title: 'FEDESCA ',
   description:
     'Fundación Educativa para el Desarrollo Social, Cultural y Ambiental (FEDESCA) – Colegio San Carlos.',
 }

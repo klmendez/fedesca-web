@@ -19,6 +19,9 @@ export interface PageHeroProps {
 
   /** NEW: controlar ancho/espaciado del contenido */
   contentClassName?: string
+
+  /** Permite reemplazar el fondo por defecto basado en degradados */
+  background?: React.ReactNode
 }
 
 export default function PageHero({
@@ -31,6 +34,7 @@ export default function PageHero({
   children,
   media,
   contentClassName,
+  background,
 }: PageHeroProps) {
   const alignmentClass =
     align === 'center'
@@ -41,11 +45,15 @@ export default function PageHero({
     <section className={`relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20 ${className ?? ''}`}>
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--hero-from))] via-[hsl(var(--hero-via))] to-[hsl(var(--hero-to))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_hsla(var(--hero-glow)/0.18),_transparent_58%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,rgba(0,0,0,0.05)_68%,rgba(0,0,0,0.1)_100%)] dark:bg-[radial-gradient(circle_at_center,_transparent_0%,rgba(0,0,0,0.35)_70%,rgba(0,0,0,0.55)_100%)]" />
-        <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:18px_18px]" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background/95 via-background/60 to-transparent dark:via-background/35" />
+        {background ?? (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--hero-from))] via-[hsl(var(--hero-via))] to-[hsl(var(--hero-to))]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_hsla(var(--hero-glow)/0.18),_transparent_58%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,rgba(0,0,0,0.05)_68%,rgba(0,0,0,0.1)_100%)] dark:bg-[radial-gradient(circle_at_center,_transparent_0%,rgba(0,0,0,0.35)_70%,rgba(0,0,0,0.55)_100%)]" />
+            <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:18px_18px]" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background/95 via-background/60 to-transparent dark:via-background/35" />
+          </>
+        )}
       </div>
 
       {/* Media layer (absolute images, etc) */}

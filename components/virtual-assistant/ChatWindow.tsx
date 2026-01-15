@@ -26,7 +26,7 @@ inputRef: React.RefObject<HTMLInputElement | null>
     <div className="relative mb-1 w-[360px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-3xl border border-border/70 bg-background/95 shadow-[0_35px_90px_-45px_rgba(24,24,78,0.55)] backdrop-blur-xl">
       <div className="flex items-center justify-between border-b border-border/60 px-5 py-4">
         <div className="flex items-start gap-3">
-          <div className="grid h-10 w-10 place-items-center rounded-2xl bg-[linear-gradient(135deg,hsla(var(--primary)/1),hsla(var(--accent)/1))] text-[hsl(var(--primary-foreground))] shadow-sm">
+          <div className="grid h-10 w-10 place-items-center rounded-2xl bg-[hsl(var(--fed-purple))] text-white shadow-sm">
             <Bot size={18} />
           </div>
           <div>
@@ -80,9 +80,9 @@ inputRef: React.RefObject<HTMLInputElement | null>
           type="submit"
           disabled={!props.canSend}
           className={[
-            'inline-flex h-10 w-10 items-center justify-center rounded-full bg-[linear-gradient(135deg,hsla(var(--primary)/1),hsla(var(--accent)/1))]',
-            'text-[hsl(var(--primary-foreground))] shadow-[0_16px_36px_-18px_hsla(var(--primary)/0.65)] transition',
-            'hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-18px_hsla(var(--primary)/0.75)]',
+            'inline-flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--fed-purple))] text-white',
+            'shadow-[0_16px_36px_-18px_hsla(var(--fed-purple)/0.65)] transition',
+            'hover:-translate-y-0.5 hover:shadow-[0_22px_48px_-18px_hsla(var(--fed-purple)/0.75)]',
             'disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0',
           ].join(' ')}
           aria-label="Enviar mensaje"

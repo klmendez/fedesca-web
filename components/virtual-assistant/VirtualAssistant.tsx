@@ -210,11 +210,11 @@ export default function VirtualAssistant() {
       <button
         type="button"
         onClick={toggle}
-        className="group relative grid h-14 w-14 place-items-center rounded-full bg-[linear-gradient(135deg,hsla(var(--primary)/1),hsla(var(--accent)/1))] text-[hsl(var(--primary-foreground))] shadow-[0_18px_50px_-18px_hsla(var(--primary)/0.65)] transition hover:-translate-y-1 hover:shadow-[0_26px_70px_-20px_hsla(var(--primary)/0.75)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsla(var(--primary)/1)]"
+        className="group relative grid h-14 w-14 place-items-center rounded-full bg-[hsl(var(--fed-purple))] text-white shadow-[0_18px_50px_-18px_hsla(var(--fed-purple)/0.65)] transition hover:-translate-y-1 hover:shadow-[0_26px_70px_-20px_hsla(var(--fed-purple)/0.75)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsla(var(--fed-purple)/1)]"
         aria-label={open ? 'Cerrar asistente' : 'Abrir asistente virtual'}
       >
         <Bot size={22} />
-        <span className="pointer-events-none absolute right-full mr-3 hidden translate-y-1 rounded-full bg-[linear-gradient(135deg,hsla(var(--primary)/1),hsla(var(--accent)/1))] px-3 py-1 text-xs font-semibold text-[hsl(var(--primary-foreground))] opacity-0 shadow-lg shadow-[hsla(var(--primary)/0.45)] transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 lg:block">
+        <span className="pointer-events-none absolute right-full mr-3 hidden translate-y-1 rounded-full bg-[hsl(var(--fed-purple))] px-3 py-1 text-xs font-semibold text-white opacity-0 shadow-lg shadow-[hsla(var(--fed-purple)/0.45)] transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 lg:block">
           {open ? 'Cerrar' : 'Asistente'}
         </span>
       </button>

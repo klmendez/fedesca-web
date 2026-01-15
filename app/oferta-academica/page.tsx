@@ -1,32 +1,33 @@
-import Section from '@/components/Section'
 import { oferta } from '@/data/oferta'
 import { OfertaAcademicaHero } from '@/sections/oferta-academica/Hero'
-import { FormalEducation } from '@/sections/oferta-academica/FormalEducation'
-import { TechnicalAreas } from '@/sections/oferta-academica/TechnicalAreas'
-import { ContinuingEducation } from '@/sections/oferta-academica/ContinuingEducation'
+
+import Formal from '@/sections/oferta-academica/formal'
+import Tecnico from '@/sections/oferta-academica/tecnico'
+import Fundamentacion from '@/sections/oferta-academica/fundamentacion'
+import Reentrenamiento from '@/sections/oferta-academica/reentrenamiento'
+import Complementario from '@/sections/oferta-academica/complementario'
 
 export default function OfertaAcademicaPage() {
   return (
     <>
       <OfertaAcademicaHero />
+      <Formal programs={oferta.formal} />
+      <Tecnico programs={oferta.tecnicos} />
 
-      <Section>
-        <FormalEducation programs={oferta.formal} />
+      <Fundamentacion
+        programs={oferta.fundamentacion}
+        note="Nota: La disponibilidad puede variar según la sede y requisitos normativos."
+      />
 
-        <TechnicalAreas
-          areas={[
-            { title: 'Área Salud', items: oferta.tecnicos.salud },
-            { title: 'Área Técnica y Tecnología', items: oferta.tecnicos.tecnologia },
-            { title: 'Área Administrativa', items: oferta.tecnicos.administrativa },
-            { title: 'Seguridad y Vigilancia', items: oferta.tecnicos.seguridad },
-          ]}
-        />
+      <Reentrenamiento
+        programs={oferta.reentrenamiento}
+        note="Nota: La disponibilidad puede variar según la sede y requisitos normativos."
+      />
 
-        <ContinuingEducation
-          programs={oferta.reentrenamientos}
-          note="Nota: La disponibilidad puede variar según la sede y requisitos normativos."
-        />
-      </Section>
+      <Complementario
+        programs={oferta.complementarios}
+        note="Servicio Social y Comunitario: certificado/constancia requerido por el colegio (según lineamientos institucionales)."
+      />
     </>
   )
 }

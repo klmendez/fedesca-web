@@ -40,8 +40,8 @@ function FedAccent() {
 export default function About() {
   return (
     <section className="relative py-16">
-      {/* fondo suave */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-primary/8 via-transparent" />
+      {/* fondo sólido */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-1/2 bg-[hsla(var(--background)/1)]" />
 
       <div className="container-page">
         <FadeIn>
@@ -67,8 +67,8 @@ export default function About() {
                 <Card key={item.title}>
                   {/* CONTENIDO INTERNO (aquí está el diseño) */}
                   <div className="relative space-y-4">
-                    {/* glow superior */}
-                    <div className="pointer-events-none absolute inset-x-0 -top-6 h-24 bg-gradient-to-b from-primary/10 via-transparent" />
+                    {/* acento sólido */}
+                    <div className="pointer-events-none absolute inset-x-0 -top-6 h-[6px] bg-[hsl(var(--fed-purple))]" />
 
                     {/* header de la card */}
                     <div className="flex items-start gap-4">

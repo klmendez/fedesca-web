@@ -3,12 +3,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="relative mt-16 overflow-hidden">
-      {/* Fondo suave (sin rayas/bordes) */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/6 to-accent/6" />
-        <div className="absolute left-[-10%] top-[-25%] h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute right-[-12%] bottom-[-35%] h-[560px] w-[560px] rounded-full bg-accent/10 blur-3xl" />
-      </div>
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[hsla(var(--background)/1)]" />
 
       <div className="container-page py-14">
         <div className="grid gap-10 md:grid-cols-3 md:items-start">

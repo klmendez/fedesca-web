@@ -314,7 +314,7 @@ export default function OfertaTiles() {
 
   return (
     <section className="relative py-16">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-primary/8 via-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-1/2 bg-[hsla(var(--background)/1)]" />
 
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
@@ -355,8 +355,8 @@ export default function OfertaTiles() {
                     "
                   />
 
-                  <div className="absolute inset-0 bg-black/35 dark:bg-black/55" />
-                  <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
+                  <div className="absolute inset-0 bg-black/45 dark:bg-black/65" />
+                  <div className="absolute inset-x-0 bottom-0 h-2/3 bg-black/60" />
 
                   <div className="absolute inset-x-0 bottom-0 p-5">
                     <div className="flex flex-wrap items-center gap-2">

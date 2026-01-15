@@ -97,7 +97,6 @@ export default function Hero() {
                   con programas de educación formal y para jóvenes y adultos que transforman vidas en Popayán y el Cauca.
                 </p>
 
-                {/* CTAs */}
                 <div className="flex flex-wrap items-center gap-3 pt-1">
                   <Link
                     href="/oferta-academica"
@@ -142,7 +141,6 @@ export default function Hero() {
                 
               </div>
 
-              {/* Spacer columna derecha */}
               <div className="hidden lg:block w-[40%]" />
             </div>
           </div>
