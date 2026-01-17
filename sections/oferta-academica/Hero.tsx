@@ -4,9 +4,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import PageHero from '@/components/PageHero'
 import { basePath } from '@/lib/basePath'
-import { useTheme } from 'next-themes'
 
-type ThemeTone = {
+type SlideTone = {
   base: string
   accentOne: string
   accentTwo: string
@@ -23,10 +22,7 @@ type Slide = {
   eyebrow?: string
   title: string
   subtitle: string
-  palette: {
-    light: ThemeTone
-    dark: ThemeTone
-  }
+  tone: SlideTone
   image?: string
 }
 
@@ -43,29 +39,16 @@ export function OfertaAcademicaHero() {
         title: 'Educación Formal',
         subtitle:
           'Adquiere tu bachillerato académico conforme a la normativa educativa vigente.',
-        palette: {
-          light: {
-            base: '#eef2ff',
-            accentOne: 'rgba(207,220,255,0.78)',
-            accentTwo: 'rgba(190,205,255,0.68)',
-            gradientFrom: '#eef2ff',
-            gradientVia: 'rgba(238,242,255,0.78)',
-            gradientTo: 'rgba(238,242,255,0)',
-            tint: 'linear-gradient(132deg, rgba(207,220,255,0.76), rgba(238,242,255,0.92))',
-            ink: '236 41% 18%',
-            inkSoft: '236 41% 18% / 0.72',
-          },
-          dark: {
-            base: '#040714',
-            accentOne: 'rgba(14,23,49,0.9)',
-            accentTwo: 'rgba(26,43,85,0.88)',
-            gradientFrom: '#040714',
-            gradientVia: 'rgba(4,7,20,0.74)',
-            gradientTo: 'rgba(4,7,20,0)',
-            tint: 'linear-gradient(132deg, rgba(19,33,70,0.82), rgba(4,7,20,0.94))',
-            ink: '0 0% 98%',
-            inkSoft: '0 0% 98% / 0.74',
-          },
+        tone: {
+          base: '#eef2ff',
+          accentOne: 'rgba(207,220,255,0.78)',
+          accentTwo: 'rgba(190,205,255,0.68)',
+          gradientFrom: '#eef2ff',
+          gradientVia: 'rgba(238,242,255,0.78)',
+          gradientTo: 'rgba(238,242,255,0)',
+          tint: 'linear-gradient(132deg, rgba(207,220,255,0.76), rgba(238,242,255,0.92))',
+          ink: '236 41% 18%',
+          inkSoft: '236 41% 18% / 0.72',
         },
         image: `${basePath}/oferta/bachiller.webp`,
       },
@@ -75,29 +58,16 @@ export function OfertaAcademicaHero() {
         title: 'Formación Técnica Laboral',
         subtitle:
           'Contamos con diferentes programas técnicos orientados al mundo laboral.',
-        palette: {
-          light: {
-            base: '#e6f6f9',
-            accentOne: 'rgba(196,237,245,0.78)',
-            accentTwo: 'rgba(180,229,240,0.68)',
-            gradientFrom: '#e6f6f9',
-            gradientVia: 'rgba(230,246,249,0.78)',
-            gradientTo: 'rgba(230,246,249,0)',
-            tint: 'linear-gradient(132deg, rgba(196,237,245,0.72), rgba(230,246,249,0.9))',
-            ink: '215 33% 18%',
-            inkSoft: '215 33% 18% / 0.7',
-          },
-          dark: {
-            base: '#021015',
-            accentOne: 'rgba(6,33,42,0.9)',
-            accentTwo: 'rgba(16,53,65,0.88)',
-            gradientFrom: '#021015',
-            gradientVia: 'rgba(2,16,21,0.72)',
-            gradientTo: 'rgba(2,16,21,0)',
-            tint: 'linear-gradient(132deg, rgba(8,33,40,0.82), rgba(2,16,21,0.94))',
-            ink: '210 24% 96%',
-            inkSoft: '210 24% 96% / 0.72',
-          },
+        tone: {
+          base: '#e6f6f9',
+          accentOne: 'rgba(196,237,245,0.78)',
+          accentTwo: 'rgba(180,229,240,0.68)',
+          gradientFrom: '#e6f6f9',
+          gradientVia: 'rgba(230,246,249,0.78)',
+          gradientTo: 'rgba(230,246,249,0)',
+          tint: 'linear-gradient(132deg, rgba(196,237,245,0.72), rgba(230,246,249,0.9))',
+          ink: '215 33% 18%',
+          inkSoft: '215 33% 18% / 0.7',
         },
         image: `${basePath}/oferta/bachiller.webp`,
       },
@@ -107,29 +77,16 @@ export function OfertaAcademicaHero() {
         title: 'Cursos de Fundamentación',
         subtitle:
           'Fundamentación estratégica para equipos de vigilancia y seguridad.',
-        palette: {
-          light: {
-            base: '#fdf4e4',
-            accentOne: 'rgba(253,226,186,0.82)',
-            accentTwo: 'rgba(251,215,161,0.7)',
-            gradientFrom: '#fdf4e4',
-            gradientVia: 'rgba(253,244,228,0.78)',
-            gradientTo: 'rgba(253,244,228,0)',
-            tint: 'linear-gradient(132deg, rgba(253,226,186,0.74), rgba(253,244,228,0.92))',
-            ink: '32 42% 20%',
-            inkSoft: '32 42% 20% / 0.72',
-          },
-          dark: {
-            base: '#120a02',
-            accentOne: 'rgba(38,18,4,0.9)',
-            accentTwo: 'rgba(59,30,8,0.88)',
-            gradientFrom: '#120a02',
-            gradientVia: 'rgba(18,10,2,0.72)',
-            gradientTo: 'rgba(18,10,2,0)',
-            tint: 'linear-gradient(132deg, rgba(58,33,9,0.82), rgba(18,10,2,0.94))',
-            ink: '45 41% 96%',
-            inkSoft: '45 41% 96% / 0.75',
-          },
+        tone: {
+          base: '#fdf4e4',
+          accentOne: 'rgba(253,226,186,0.82)',
+          accentTwo: 'rgba(251,215,161,0.7)',
+          gradientFrom: '#fdf4e4',
+          gradientVia: 'rgba(253,244,228,0.78)',
+          gradientTo: 'rgba(253,244,228,0)',
+          tint: 'linear-gradient(132deg, rgba(253,226,186,0.74), rgba(253,244,228,0.92))',
+          ink: '32 42% 20%',
+          inkSoft: '32 42% 20% / 0.72',
         },
         image: `${basePath}/oferta/bachiller.webp`,
       },
@@ -139,29 +96,16 @@ export function OfertaAcademicaHero() {
         title: 'Reentrenamiento Laboral',
         subtitle:
           'Actualiza las competencias de tu equipo de seguridad y talento humano.',
-        palette: {
-          light: {
-            base: '#f5f0ff',
-            accentOne: 'rgba(224,206,255,0.8)',
-            accentTwo: 'rgba(206,188,254,0.7)',
-            gradientFrom: '#f5f0ff',
-            gradientVia: 'rgba(245,240,255,0.78)',
-            gradientTo: 'rgba(245,240,255,0)',
-            tint: 'linear-gradient(132deg, rgba(224,206,255,0.76), rgba(245,240,255,0.92))',
-            ink: '258 36% 22%',
-            inkSoft: '258 36% 22% / 0.7',
-          },
-          dark: {
-            base: '#0a0415',
-            accentOne: 'rgba(26,17,52,0.9)',
-            accentTwo: 'rgba(46,31,84,0.88)',
-            gradientFrom: '#0a0415',
-            gradientVia: 'rgba(10,4,21,0.72)',
-            gradientTo: 'rgba(10,4,21,0)',
-            tint: 'linear-gradient(132deg, rgba(41,28,77,0.82), rgba(10,4,21,0.94))',
-            ink: '0 0% 98%',
-            inkSoft: '0 0% 98% / 0.74',
-          },
+        tone: {
+          base: '#f5f0ff',
+          accentOne: 'rgba(224,206,255,0.8)',
+          accentTwo: 'rgba(206,188,254,0.7)',
+          gradientFrom: '#f5f0ff',
+          gradientVia: 'rgba(245,240,255,0.78)',
+          gradientTo: 'rgba(245,240,255,0)',
+          tint: 'linear-gradient(132deg, rgba(224,206,255,0.76), rgba(245,240,255,0.92))',
+          ink: '258 36% 22%',
+          inkSoft: '258 36% 22% / 0.7',
         },
         image: `${basePath}/oferta/bachiller.webp`,
       },
@@ -171,29 +115,16 @@ export function OfertaAcademicaHero() {
         title: 'Programas Complementarios',
         subtitle:
           'Servicio social y acompañamiento para la certificación de experiencia laboral.',
-        palette: {
-          light: {
-            base: '#f2faf5',
-            accentOne: 'rgba(210,238,223,0.8)',
-            accentTwo: 'rgba(195,230,214,0.7)',
-            gradientFrom: '#f2faf5',
-            gradientVia: 'rgba(242,250,245,0.74)',
-            gradientTo: 'rgba(242,250,245,0)',
-            tint: 'linear-gradient(132deg, rgba(210,238,223,0.76), rgba(242,250,245,0.92))',
-            ink: '165 28% 20%',
-            inkSoft: '165 28% 20% / 0.7',
-          },
-          dark: {
-            base: '#07130f',
-            accentOne: 'rgba(14,37,28,0.9)',
-            accentTwo: 'rgba(25,56,41,0.88)',
-            gradientFrom: '#07130f',
-            gradientVia: 'rgba(7,19,15,0.72)',
-            gradientTo: 'rgba(7,19,15,0)',
-            tint: 'linear-gradient(132deg, rgba(24,58,43,0.82), rgba(7,19,15,0.94))',
-            ink: '140 15% 96%',
-            inkSoft: '140 15% 96% / 0.72',
-          },
+        tone: {
+          base: '#f2faf5',
+          accentOne: 'rgba(210,238,223,0.8)',
+          accentTwo: 'rgba(195,230,214,0.7)',
+          gradientFrom: '#f2faf5',
+          gradientVia: 'rgba(242,250,245,0.74)',
+          gradientTo: 'rgba(242,250,245,0)',
+          tint: 'linear-gradient(132deg, rgba(210,238,223,0.76), rgba(242,250,245,0.92))',
+          ink: '165 28% 20%',
+          inkSoft: '165 28% 20% / 0.7',
         },
         image: `${basePath}/oferta/bachiller.webp`,
       },
@@ -203,8 +134,6 @@ export function OfertaAcademicaHero() {
 
   const [index, setIndex] = useState(0)
   const timerRef = useRef<number | null>(null)
-  const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
 
   const goTo = (i: number) => setIndex((i + slides.length) % slides.length)
   const next = () => setIndex((v) => (v + 1) % slides.length)
@@ -218,11 +147,8 @@ export function OfertaAcademicaHero() {
     }
   }, [prefersReducedMotion, slides.length])
 
-  useEffect(() => setMounted(true), [])
-
   const slide = slides[index]
-  const mode = mounted && resolvedTheme === 'dark' ? 'dark' : 'light'
-  const tone = slide.palette[mode]
+  const tone = slide.tone
 
   const heroClassName = 'relative min-h-dvh flex items-center text-balance'
   const cssVars = {
@@ -289,7 +215,7 @@ function HeroCarouselBackground({
 }: {
   slideKey: string
   image?: string
-  tone: ThemeTone
+  tone: SlideTone
   reduced: boolean
 }) {
   return (

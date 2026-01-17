@@ -5,19 +5,50 @@ import { FadeIn } from '@/components/Motion'
 import PageHero from '@/components/PageHero'
 import { basePath } from '@/lib/basePath'
 
+const WHATSAPP_NUMBER = '573001234567' // ← cambia por el real
+const WHATSAPP_MESSAGE =
+  'Hola, quisiera recibir información sobre los programas (bachillerato por ciclos, educación formal y técnicos) y el proceso de inscripción en FEDESCA / Colegio San Carlos.'
+
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE
+)}`
+
 export default function Hero() {
   return (
     <PageHero
       className="relative min-h-dvh overflow-hidden pt-20 sm:pt-28"
       media={
         <>
-          {/* Glow + overlay sutil para legibilidad */}
+          {/* FONDO / GLOW */}
           <div className="pointer-events-none absolute inset-0 z-0">
-            <div className="absolute -top-24 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full blur-3xl opacity-35 bg-[radial-gradient(circle_at_center,hsla(var(--primary)/.40),transparent_60%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,hsla(var(--background)/.10),hsla(var(--background)/.55)_55%,hsla(var(--background)/.90))]" />
+            {/* Glow central */}
+            <div className="absolute -top-28 left-1/2 h-[520px] w-[880px] -translate-x-1/2 rounded-full blur-3xl opacity-45 bg-[radial-gradient(circle_at_center,hsla(var(--fed-purple)/.55),transparent_65%)]" />
+
+            {/* Degradado principal */}
+            <div
+              className="
+                absolute inset-0
+                bg-[linear-gradient(
+                  to_bottom,
+                  white 0%,
+                  white 18%,
+                  hsla(var(--fed-purple)/.22) 42%,
+                  hsla(var(--fed-purple)/.42) 68%,
+                  hsla(var(--background)/.95) 100%
+                )]
+                dark:bg-[linear-gradient(
+                  to_bottom,
+                  hsla(var(--background)/.08) 0%,
+                  hsla(var(--background)/.25) 25%,
+                  hsla(var(--fed-purple)/.30) 55%,
+                  hsla(var(--fed-purple)/.55) 80%,
+                  hsla(var(--background)/.95) 100%
+                )]
+              "
+            />
           </div>
 
-          {/* IMAGEN DESKTOP (derecha) */}
+          {/* IMAGEN DESKTOP */}
           <div className="pointer-events-none absolute right-0 bottom-0 z-0 hidden lg:block h-[82%] w-[40%]">
             <Image
               src={`${basePath}/1.webp`}
@@ -34,7 +65,7 @@ export default function Hero() {
             />
           </div>
 
-          {/* IMAGEN MOBILE (abajo) */}
+          {/* IMAGEN MOBILE */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 lg:hidden h-[330px] sm:h-[400px]">
             <Image
               src={`${basePath}/1.webp`}
@@ -57,107 +88,77 @@ export default function Hero() {
         <FadeIn>
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
-              {/* Texto */}
+              {/* TEXTO */}
               <div className="max-w-[58rem] space-y-7 lg:pr-[18%]">
-                <div className="inline-flex items-center gap-2 rounded-full bg-background/55 px-3 py-1 text-xs font-semibold ring-1 ring-inset ring-border/60 backdrop-blur">
-                  <span
-                    className="h-2 w-2 rounded-full"
-                    style={{ backgroundColor: 'hsl(var(--fed-purple))' } as React.CSSProperties}
-                  />
-                  Educación formal y por ciclos • Popayán (Cauca)
+                {/* Eyebrow */}
+                <div className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1 text-xs font-semibold ring-1 ring-inset ring-border/70 backdrop-blur">
+                  <span className="h-2 w-2 rounded-full bg-[hsl(var(--fed-purple))]" />
+                  Fundación Educativa FEDESCA • Colegio San Carlos
                 </div>
 
+                {/* TÍTULO */}
                 <h1
                   className="text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-6xl"
                   style={{ color: 'hsl(var(--hero-ink))' } as React.CSSProperties}
                 >
                   <span className="block sm:hidden">
-                    Educación que impulsa el
-                    {' '}
-                    <span className="text-[hsl(var(--fed-purple))]">desarrollo social</span>
-                    {' '}
-                    en Popayán.
+                    Nunca es tarde para{' '}
+                    <span className="text-[hsl(var(--fed-purple))]">seguir aprendiendo</span>
                   </span>
 
                   <span className="hidden sm:block">
-                    <span className="block">
-                      Fundación Educativa <span className="whitespace-nowrap">para el</span>
-                    </span>
-
-                    <span className="block">
-                      <span className="text-[hsl(var(--fed-purple))]">Desarrollo Social</span>,{' '}
-                      <span className="text-[hsl(var(--fed-purple-text))]">Cultural</span> y{' '}
-                      <span className="whitespace-nowrap">Ambiental</span>
-                    </span>
-
-                    <span
-                      className="mt-4 block text-sm font-medium tracking-[0.22em] uppercase"
-                      style={{ color: 'hsl(var(--hero-ink-soft))' } as React.CSSProperties}
-                    >
-                      FEDESCA
+                    <span className="block">Nunca es tarde para</span>
+                    <span className="block text-[hsl(var(--fed-purple))]">
+                      seguir aprendiendo
                     </span>
                   </span>
                 </h1>
 
-                <div className="space-y-4">
-                  <p
-                    className="max-w-[44rem] text-pretty text-base leading-relaxed sm:hidden"
-                    style={{ color: 'hsl(var(--hero-ink-soft))' } as React.CSSProperties}
-                  >
-                    Programas formales y por ciclos para transformar vidas en Popayán y el Cauca.
-                  </p>
+                {/* SUBTÍTULO */}
+                <p
+                  className="max-w-[44rem] text-pretty text-base leading-relaxed sm:text-lg"
+                  style={{ color: 'hsl(var(--hero-ink-soft))' } as React.CSSProperties}
+                >
+                  Educación formal, <strong className="font-semibold">bachillerato por ciclos</strong>{' '}
+                  y <strong className="font-semibold">programas técnicos</strong> diseñados para
+                  jóvenes y adultos que quieren avanzar, trabajar y superarse.
+                </p>
 
-                  <p
-                    className="hidden max-w-[44rem] text-pretty text-base leading-relaxed sm:block sm:text-lg"
-                    style={{ color: 'hsl(var(--hero-ink-soft))' } as React.CSSProperties}
-                  >
-                    Educación que impulsa el <strong className="font-semibold">desarrollo social y comunitario</strong>,
-                    con programas de educación formal y para jóvenes y adultos que transforman vidas en Popayán y el Cauca.
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-3 pt-1">
+                {/* BOTONES (mismo estilo, SOLO cambia relleno) */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
                   <Link
                     href="/oferta-academica"
                     className="
                       inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold
                       transition hover:-translate-y-0.5 active:translate-y-0
-                      bg-[linear-gradient(135deg,hsla(var(--primary)/1),hsla(var(--accent)/1))]
-                      text-[hsl(var(--primary-foreground))]
-                      shadow-[0_22px_45px_-28px_hsla(var(--primary)/0.70)]
-                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[hsl(var(--primary))]
+                      bg-[linear-gradient(135deg,hsla(var(--fed-purple)/.22),hsla(var(--fed-purple)/.12))]
+                      ring-1 ring-inset ring-border/70 backdrop-blur
+                      shadow-[0_22px_45px_-34px_hsla(var(--fed-purple)/0.45)]
+                      hover:bg-[linear-gradient(135deg,hsla(var(--fed-purple)/.30),hsla(var(--fed-purple)/.18))]
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[hsl(var(--fed-purple))]
                     "
                   >
-                    Ver oferta académica
+                    Conocer programas
                   </Link>
 
-                  <Link
-                    href="/admisiones"
+                  <a
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noreferrer"
                     className="
                       inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold
-                      bg-background/55 text-[hsl(var(--hero-ink))]
+                      transition hover:-translate-y-0.5 active:translate-y-0
+                      bg-[linear-gradient(135deg,hsla(var(--fed-purple)/.16),hsla(var(--fed-purple)/.08))]
                       ring-1 ring-inset ring-border/70 backdrop-blur
-                      transition hover:-translate-y-0.5 hover:bg-background/65 active:translate-y-0
-                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[hsl(var(--primary))]
+                      hover:bg-[linear-gradient(135deg,hsla(var(--fed-purple)/.22),hsla(var(--fed-purple)/.12))]
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[hsl(var(--fed-purple))]
                     "
+                    aria-label="Hablar con un asesor por WhatsApp"
+                    title="Hablar con un asesor por WhatsApp"
                   >
-                    Inscripciones
-                  </Link>
-
-                  <Link
-                    href="/contacto"
-                    className="
-                      inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold
-                      text-[hsl(var(--hero-ink-soft))]
-                      transition hover:text-[hsl(var(--hero-ink))]
-                      underline underline-offset-4 decoration-border/70 hover:decoration-border
-                    "
-                  >
-                    Contáctanos
-                  </Link>
+                    Hablar con un asesor
+                  </a>
                 </div>
-
-                
               </div>
 
               <div className="hidden lg:block w-[40%]" />

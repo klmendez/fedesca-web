@@ -49,9 +49,9 @@ export default function PageHero({
           <>
             <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--hero-from))] via-[hsl(var(--hero-via))] to-[hsl(var(--hero-to))]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_hsla(var(--hero-glow)/0.18),_transparent_58%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,rgba(0,0,0,0.05)_68%,rgba(0,0,0,0.1)_100%)] dark:bg-[radial-gradient(circle_at_center,_transparent_0%,rgba(0,0,0,0.35)_70%,rgba(0,0,0,0.55)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,rgba(0,0,0,0.05)_68%,rgba(0,0,0,0.1)_100%)]" />
             <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:18px_18px]" />
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background/95 via-background/60 to-transparent dark:via-background/35" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background/95 via-background/60 to-transparent" />
           </>
         )}
       </div>
@@ -68,7 +68,7 @@ export default function PageHero({
             <div className={`${alignmentClass} ${contentClassName ?? ''}`}>
               {eyebrow ? (
                 <span
-                  className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.28em] ring-1 ring-inset ring-border/60 backdrop-blur dark:bg-white/10 dark:ring-white/15"
+                  className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.28em] ring-1 ring-inset ring-border/60 backdrop-blur"
                   style={{ color: `hsl(var(--hero-ink))` }}
                 >
                   {eyebrow}
